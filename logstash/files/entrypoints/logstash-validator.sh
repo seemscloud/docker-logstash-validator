@@ -7,7 +7,7 @@ for PIPELINE in `ls -1 config/pipelines` ; do
 #    echo "Validation failed, please fix syntax.."
 #  else
 #    echo "Validation success, copying configuration files.."
-    rm -rf /data/pipelines/*
-    mkdir -p /data/pipelines/"${PIPELINE}"
-    cp -R config/pipelines/"${PIPELINE}"/* /data/pipelines/"${PIPELINE}"
+    rm -rf /data/*
+    mkdir -p /data/"${PIPELINE}"
+    cp -R config/pipelines/"${PIPELINE}"/* /data/"${PIPELINE}"
 done

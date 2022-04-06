@@ -15,7 +15,7 @@ services:
       - ${PWD}/logstash/files/logstash.yml:/app/config/logstash.yml:ro
       - ${PWD}/logstash/files/pipelines.yml:/app/config/pipelines.yml:ro
       - ${PWD}/logstash/files/entrypoints/logstash.sh:/app/entrypoint.sh:ro
-      - logstash-data:/app/config/a:ro
+      - logstash-data:/app/config/pipelines:ro
   logstash-validator:
     container_name: logstash-validator
     hostname: logstash-validator
