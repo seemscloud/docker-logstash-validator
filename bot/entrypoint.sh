@@ -1,6 +1,6 @@
 #!/bin/bash
 
-LOG_LINE='{"message":"afoo=1&abar=2&acar=3 key1:value1 key2:value2"}'
+LOG_LINE='{"message":"INFO 2021:02:03 12:31:59 foo=1 bar=2 tar=3 pac=4"}'
 
 while true; do
   MESSAGE="${LOG_LINE}"
