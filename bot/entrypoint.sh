@@ -1,13 +1,12 @@
 #!/bin/bash
 
-LOG_LINE="INFO  Lorem Ipsum is simply dummy text of the printing and typesetting industry"
+LOG_LINE='{"message":"afoo=1&abar=2&acar=3 key1:value1 key2:value2"}'
 
 while true; do
-  DATE=`date +"%Y-%m-%d %H:%M:%S"`
-  MESSAGE="${DATE} ${LOG_LINE}"
+  MESSAGE="${LOG_LINE}"
 
   curl -X PUT http://logstash:8080  \
        -H "content-type: application/json" \
-       -d "{\"message\":\"${MESSAGE}\"}" --silent
+       -d "${MESSAGE}" --silent
   sleep 1
 done
