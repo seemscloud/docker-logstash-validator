@@ -1,6 +1,6 @@
 #!/bin/bash
 
-LOG_LINE='{"message":"INFO 2021:02:03 12:31:59 foo=1 bar=2 tar=3 pac=4"}'
+LOG_LINE='{"message":"2021:02:03 12:31:59|[name]=<Jan>|surname=<Kowalski>|birth_date=1993|country=Poland"}'
 
 while true; do
   MESSAGE="${LOG_LINE}"
