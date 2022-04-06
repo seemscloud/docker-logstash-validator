@@ -14,17 +14,16 @@ services:
     volumes:
       - ${PWD}/logstash/files/logstash.yml:/app/config/logstash.yml:ro
       - ${PWD}/logstash/files/pipelines.yml:/app/config/pipelines.yml:ro
-      - ${PWD}/files/logstash/entrypoint.sh:/app/entrypoint.sh:ro
-      - logstash-data:/data:ro
+      - ${PWD}/logstash/files/entrypoints/logstash.sh:/app/entrypoint.sh:ro
+      - logstash-data:/app/config/a:ro
   logstash-validator:
     container_name: logstash-validator
     hostname: logstash-validator
     build:
       context: ./logstash
     volumes:
-      - ${PWD}/logstash/files/pipelines/ingest:/app/config/pipelines/ingest:ro
-      - ${PWD}/logstash/files/pipelines/kafka:/app/config/pipelines/kafka:ro
-      - ${PWD}/files/logstash-validator/entrypoint.sh:/app/entrypoint.sh:ro
+      - ${PWD}/logstash/files/pipelines:/app/config/pipelines:ro
+      - ${PWD}/logstash/files/entrypoints/logstash-validator.sh:/app/entrypoint.sh:ro
       - logstash-data:/data:rw
 
 volumes:
